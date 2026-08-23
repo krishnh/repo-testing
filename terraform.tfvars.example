@@ -1,0 +1,15 @@
+aws_region = "us-east-1"
+name       = "production-app-01"
+
+# Use an existing private subnet and a least-privilege security group.
+subnet_id          = "subnet-0123456789abcdef0"
+security_group_ids = ["sg-0123456789abcdef0"]
+
+# Attach an instance profile that permits only the workload's required AWS actions.
+iam_instance_profile_name = "production-app-instance-profile"
+
+tags = {
+  Environment = "production"
+  ManagedBy   = "Terraform"
+  Application = "example-app"
+}
